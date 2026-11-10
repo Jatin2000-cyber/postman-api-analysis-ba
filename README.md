@@ -25,13 +25,11 @@ postman-api-analysis-ba/
 ├── postman/
 │   ├── ecommerce-api-analysis.postman_collection.json
 │   └── dummyjson-test.postman_environment.json
-├── docs/
-│   ├── api-response-analysis.xlsx / .pdf / .docx / .csv
-│   ├── user-stories-and-acceptance-criteria.pdf / .csv
-│   ├── gap-analysis.pdf / .csv
-│   └── login-flow-diagram.png
-└── screenshots/
-```
+└── docs/
+    ├── api-response-analysis.xlsx / .pdf / .docx / .csv
+    ├── user-stories-and-acceptance-criteria.pdf / .csv
+    ├── gap-analysis.pdf / .csv
+    └── login-flow-diagram.png```
 
 | Deliverable | What it is |
 |---|---|
@@ -43,14 +41,14 @@ postman-api-analysis-ba/
 ## Test results at a glance
 - 12 test cases run; 11 matched the expected status code
 - Status codes observed: 200, 201, 400, 401, 404
-- One test (empty request body, TC-12) was set up incorrectly the first time and is being re-run [TODO: update after the re-run]
+- The empty-request-body test (TC-12) was set up incorrectly in the first run; the corrected test is documented as pending.
 
 ## Key findings
 1. **The customer read-only journey works well.** Login, profile, product list and product detail all returned the expected 200 responses with the fields a front end needs.
 2. **Error handling is clear.** Wrong credentials return 400 "Invalid Credentials", a missing token and an invalid token return different 401 messages, and a missing product returns 404 with the product ID in the message.
 3. **Security gap:** adding, updating and deleting products worked without any access token. Recommendation: require a valid token and an admin role (401 for no or invalid token, 403 for non-admins).
 4. **Performance:** the product list was the slowest call at 2,900 ms in a single run, above a proposed 2,000 ms target. Recommendation: agree a target and require paging.
-5. **Still to verify:** validation of an empty product, whether changes are really saved, search/filter/sort options, and the token refresh flow [TODO: update statuses after retesting].
+5. **Still to verify:** validation of an empty product, whether changes are really saved, search/filter/sort options, and the token refresh flow.
 
 ## Skills demonstrated
 - REST API basics: HTTP methods, status codes, JSON, authentication with bearer tokens
