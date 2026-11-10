@@ -29,7 +29,7 @@ postman-api-analysis-ba/
     ├── api-response-analysis.xlsx / .pdf / .docx / .csv
     ├── user-stories-and-acceptance-criteria.pdf / .csv
     ├── gap-analysis.pdf / .csv
-    └── login-flow-diagram.png```
+    └── login-flow-diagram.png
 
 | Deliverable | What it is |
 |---|---|
